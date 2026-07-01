@@ -42,6 +42,19 @@ segmentation and tracking.
 - **6DoF object pose tracking** with oriented 3D bounding boxes
 - **Interactive 3D scene viewer** for inspecting the reconstruction
 
+## Delivered data
+
+Alongside the result videos, the reconstruction is provided as structured,
+ready-to-use data (metric metres, camera frame) — see
+[`data/DATA_FORMAT.md`](data/DATA_FORMAT.md):
+
+| File | Contents |
+|---|---|
+| [`data/tracking.json`](data/tracking.json) | Per-frame **3D + 2D hand keypoints** (both hands), **6DoF object poses**, **3D bounding boxes**, object labels + confidence, and camera intrinsics |
+| [`data/hand_meshes/`](data/hand_meshes/) | Per-frame **3D hand meshes** (standard `.obj`, 778 verts/hand) — open in Blender/MeshLab |
+
+Per-frame metric depth maps and per-object segmentation masks are available on request.
+
 ## Overview
 
 The system takes a short RGB clip of a person interacting with objects and
