@@ -2,35 +2,80 @@
 
 A pipeline by **XP Robotics** that reconstructs **3D hand–object interaction from
 a single ordinary RGB video** — no depth sensor, no calibration, no markers. From
-one camera it recovers metric 3D depth, full 3D hand meshes for both hands, and
-text-promptable object detection with per-object 6DoF pose tracking.
+one camera it recovers metric 3D depth, full 3D hand meshes for both hands,
+text-promptable object detection with per-object 6DoF pose tracking, and even
+**retargets the recovered motion onto a robot**.
+
+📄 See [`CAPABILITY.md`](CAPABILITY.md) for the one-page capability summary.
+
+---
+
+## Highlight — Robot Retargeting
+The recovered hand motion mapped onto a bimanual robot, driven end-to-end from
+the raw video.
+
+<video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/robot_retarget.mp4" controls muted loop width="480"></video>
+
+![Robot retargeting](outputs/gif/robot_retarget.gif)
 
 ---
 
 ## Results
 
-### 1. 3D Hand Mesh Reconstruction
+### 3D Hand Mesh Reconstruction
 Per-frame 3D hand meshes recovered and projected back onto the input video.
 
 <video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/mano_overlay.mp4" controls muted loop width="640"></video>
 
 ![Hand mesh reconstruction](outputs/gif/mano_overlay.gif)
 
-### 2. 3D Scene Reconstruction
-Metric depth point cloud with the reconstructed 3D hand meshes and the detected
-objects, viewed from a free camera.
+### 3D Scene Reconstruction
+Metric depth point cloud with the reconstructed 3D hand meshes and detected
+objects, from a free camera.
 
 <video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/reconstruction_3d.mp4" controls muted loop width="640"></video>
 
 ![3D scene reconstruction](outputs/gif/reconstruction_3d.gif)
 
-### 3. Hand & Object Tracking
-Per-frame hand keypoint tracking together with open-vocabulary object
-segmentation and tracking.
+### Hand & Object Tracking
+Per-frame hand keypoint tracking with open-vocabulary object segmentation.
 
 <video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/tracking_2d.mp4" controls muted loop width="640"></video>
 
 ![Hand and object tracking](outputs/gif/tracking_2d.gif)
+
+### Metric Depth
+Per-frame metric depth from the single RGB camera.
+
+<video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/depth.mp4" controls muted loop width="640"></video>
+
+![Metric depth](outputs/gif/depth.gif)
+
+### Object Segmentation
+Text-prompted object masks tracked across the clip.
+
+<video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/object_masks.mp4" controls muted loop width="640"></video>
+
+![Object segmentation](outputs/gif/object_masks.gif)
+
+### Object 3D Trajectories
+Recovered 3D position of each tracked object over time.
+
+![Object trajectories](outputs/object_trajectories.png)
+
+---
+
+## Delivered data
+
+Structured, ready-to-use outputs (metric metres, camera frame) — see
+[`data/DATA_FORMAT.md`](data/DATA_FORMAT.md):
+
+| File | Contents |
+|---|---|
+| [`data/tracking.json`](data/tracking.json) | Per-frame **3D + 2D hand keypoints**, **6DoF object poses**, **3D bounding boxes**, labels + confidence, camera intrinsics |
+| [`data/hand_meshes/`](data/hand_meshes/) | Per-frame **3D hand meshes** (`.obj`, 778 verts/hand) |
+| [`data/robot_trajectory.npz`](data/robot_trajectory.npz) | **Robot joint trajectory** from the retargeting |
+| [`data/metrics.json`](data/metrics.json) | Quality metrics summary |
 
 ---
 
@@ -40,29 +85,17 @@ segmentation and tracking.
 - **3D hand mesh reconstruction** — both hands, every frame
 - **Open-vocabulary object detection & segmentation** — objects specified by text
 - **6DoF object pose tracking** with oriented 3D bounding boxes
+- **Robot retargeting** — hand motion mapped to a robot arm/humanoid
 - **Interactive 3D scene viewer** for inspecting the reconstruction
-
-## Delivered data
-
-Alongside the result videos, the reconstruction is provided as structured,
-ready-to-use data (metric metres, camera frame) — see
-[`data/DATA_FORMAT.md`](data/DATA_FORMAT.md):
-
-| File | Contents |
-|---|---|
-| [`data/tracking.json`](data/tracking.json) | Per-frame **3D + 2D hand keypoints** (both hands), **6DoF object poses**, **3D bounding boxes**, object labels + confidence, and camera intrinsics |
-| [`data/hand_meshes/`](data/hand_meshes/) | Per-frame **3D hand meshes** (standard `.obj`, 778 verts/hand) — open in Blender/MeshLab |
-
-Per-frame metric depth maps and per-object segmentation masks are available on request.
 
 ## Overview
 
 The system takes a short RGB clip of a person interacting with objects and
-produces a temporally consistent 4D reconstruction of the scene: per-frame
+produces a temporally consistent 4D reconstruction of the scene — per-frame
 metric depth, articulated 3D hand meshes, and tracked 3D objects — all in a
-single, gravity-aligned world frame. The results above are produced end-to-end
-from raw video, with the target objects specified only by text.
+single, gravity-aligned world frame, and connects perception to action by
+retargeting the motion onto a robot. Produced end-to-end from raw video, with
+the target objects specified only by text.
 
 ---
-
-© XP Robotics. Results shown are generated by the XP Robotics 3D pose pipeline.
+© XP Robotics. Results generated by the XP Robotics 3D pose pipeline.

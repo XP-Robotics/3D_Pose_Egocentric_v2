@@ -1,0 +1,46 @@
+{
+  "clip": {
+    "n_frames": 179,
+    "fps": 15,
+    "duration_s": 11.93,
+    "image_size": [
+      640,
+      480
+    ]
+  },
+  "hands": {
+    "frames_with_hands": 179,
+    "frames_with_both_hands": 179,
+    "hand_coverage_pct": 100.0
+  },
+  "objects": {
+    "n_tracked": 4,
+    "detail": [
+      {
+        "label": "black tool box",
+        "detection_confidence": 0.945,
+        "frames_with_6dof_pose": 179
+      },
+      {
+        "label": "pressure gauge",
+        "detection_confidence": 0.844,
+        "frames_with_6dof_pose": 179
+      },
+      {
+        "label": "blue tool",
+        "detection_confidence": 0.688,
+        "frames_with_6dof_pose": 179
+      },
+      {
+        "label": "power adapter",
+        "detection_confidence": 0.832,
+        "frames_with_6dof_pose": 138
+      }
+    ]
+  },
+  "camera": {
+    "focal_px": 479.72,
+    "cx": 320.0,
+    "cy": 240.0
+  }
+}
