@@ -87,6 +87,31 @@ Details &amp; method: <a href="human_pose/">human_pose/</a> &nbsp;·&nbsp; ▶�
 
 ---
 
+## 🖐️ ARKit LiDAR 3D Hand Tracking
+
+3D hand tracking from **ARKit + LiDAR depth** (mobile capture) — 2D→3D reprojection,
+depth-overlay, and world-space 3D trajectory.
+
+<table>
+  <tr>
+    <td width="50%" align="center"><b>Input</b><br><br><img src="arkit_hand_tracking/doc/input.gif" width="100%"></td>
+    <td width="50%" align="center"><b>Depth Overlay</b><br><br><img src="arkit_hand_tracking/doc/depth_overlay.gif" width="100%"></td>
+  </tr>
+</table>
+<div align="center">
+<b>3D Visualization</b><br>
+<img src="arkit_hand_tracking/doc/viz_3d.gif" width="80%">
+</div>
+
+<div align="center"><sub>
+Details: <a href="arkit_hand_tracking/">arkit_hand_tracking/</a> &nbsp;·&nbsp; ▶️
+<a href="arkit_hand_tracking/doc/input.mp4">input</a> ·
+<a href="arkit_hand_tracking/doc/depth_overlay.mp4">depth</a> ·
+<a href="arkit_hand_tracking/doc/viz_3d.mp4">3D</a>
+</sub></div>
+
+---
+
 ## Delivered Data
 
 | File | Contents |
