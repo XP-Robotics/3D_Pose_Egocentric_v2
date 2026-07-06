@@ -54,21 +54,30 @@ Full-resolution MP4s:
 
 ---
 
-## 🧪 Egocentric Multi-Camera (Preview — in progress)
+## 🧪 Egocentric Multi-Camera (Preview)
 
-Early results on a **head/body-worn multi-fisheye capture** (`.mcap`). Object
-detection is already strong; **hand geometry is approximate pending final camera
-calibration** and will sharpen once applied. Shown as a work-in-progress preview.
+Results on a **body-worn multi-fisheye capture** (`.mcap`), front camera. The raw
+fisheye stream is undistorted with the device's factory calibration and reprojected
+to a virtual camera aimed at the work surface, then run through the full pipeline.
+**Both hands are reconstructed on 100% of frames**, and the metric 3D scene is
+recovered in a gravity-aligned frame.
 
 <table>
   <tr>
-    <td width="33%" align="center"><b>Hand &amp; Object Tracking</b><br><br><img src="preview_egocentric/gif/front_tracking_2d.gif" width="100%"></td>
-    <td width="33%" align="center"><b>3D Hand Mesh</b><br><sub>approximate calibration</sub><br><br><img src="preview_egocentric/gif/front_mano_overlay.gif" width="100%"></td>
-    <td width="33%" align="center"><b>3D Reconstruction</b><br><sub>approximate calibration</sub><br><br><img src="preview_egocentric/gif/front_reconstruction_3d.gif" width="100%"></td>
+    <td width="33%" align="center"><b>Hand &amp; Object Tracking</b><br><sub>both hands · 100% of frames</sub><br><br><img src="preview_egocentric/gif/front_tracking_2d.gif" width="100%"></td>
+    <td width="33%" align="center"><b>3D Hand Mesh</b><br><sub>MANO meshes, both hands</sub><br><br><img src="preview_egocentric/gif/front_mano_overlay.gif" width="100%"></td>
+    <td width="33%" align="center"><b>3D Reconstruction</b><br><sub>metric depth + hand meshes</sub><br><br><img src="preview_egocentric/gif/front_reconstruction_3d.gif" width="100%"></td>
   </tr>
 </table>
 
-<div align="center"><sub>⚠️ Preview only — geometry approximate (calibration pending). Not final.</sub></div>
+<div align="center"><sub>
+12 s clip · 181 frames @ 15 fps · fisheye undistorted with device calibration ·
+both hands tracked on 100% of frames.
+Full-resolution MP4s:
+<a href="preview_egocentric/front_tracking_2d.mp4">tracking</a> ·
+<a href="preview_egocentric/front_mano_overlay.mp4">hand mesh</a> ·
+<a href="preview_egocentric/front_reconstruction_3d.mp4">3D reconstruction</a>
+</sub></div>
 
 ---
 
