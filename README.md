@@ -89,24 +89,24 @@ Details &amp; method: <a href="human_pose/">human_pose/</a> &nbsp;·&nbsp; ▶�
 
 ## 🖐️ ARKit LiDAR 3D Hand Tracking
 
-3D hand tracking from **ARKit + LiDAR depth** (mobile capture) — 2D→3D reprojection,
-depth-overlay, and world-space 3D trajectory.
+3D hand tracking from **ARKit + LiDAR depth** on a mobile capture — 2D→3D
+reprojection, wrist-to-head distance, camera-pose interpolation (SLERP), and
+world-space 3D trajectory.
 
 <table>
   <tr>
-    <td width="50%" align="center"><b>Input</b><br><br><img src="arkit_hand_tracking/doc/input.gif" width="100%"></td>
-    <td width="50%" align="center"><b>Depth Overlay</b><br><br><img src="arkit_hand_tracking/doc/depth_overlay.gif" width="100%"></td>
+    <td width="50%" align="center"><b>Input</b><br><sub>ARKit RGB capture</sub><br><br><img src="arkit_hand_tracking/doc/input.gif" width="100%"></td>
+    <td width="50%" align="center"><b>Depth Overlay</b><br><sub>LiDAR depth + 2D hand skeleton + wrist distance</sub><br><br><img src="arkit_hand_tracking/doc/depth_overlay.gif" width="100%"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><b>3D Visualization</b><br><sub>hand pose + head/hand trajectory in world frame</sub><br><br><img src="arkit_hand_tracking/doc/viz_3d.gif" width="72%"></td>
   </tr>
 </table>
-<div align="center">
-<b>3D Visualization</b><br>
-<img src="arkit_hand_tracking/doc/viz_3d.gif" width="80%">
-</div>
 
 <div align="center"><sub>
-Details: <a href="arkit_hand_tracking/">arkit_hand_tracking/</a> &nbsp;·&nbsp; ▶️
+Details &amp; method: <a href="arkit_hand_tracking/">arkit_hand_tracking/</a> &nbsp;·&nbsp; ▶️ full videos:
 <a href="arkit_hand_tracking/doc/input.mp4">input</a> ·
-<a href="arkit_hand_tracking/doc/depth_overlay.mp4">depth</a> ·
+<a href="arkit_hand_tracking/doc/depth_overlay.mp4">depth overlay</a> ·
 <a href="arkit_hand_tracking/doc/viz_3d.mp4">3D</a>
 </sub></div>
 
