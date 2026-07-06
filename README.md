@@ -72,6 +72,21 @@ calibration** and will sharpen once applied. Shown as a work-in-progress preview
 
 ---
 
+## 🧍 Egocentric 3D Human Pose
+
+Full-body **19-joint 3D pose** from a stereo-fisheye egocentric camera —
+**MPJPE 37.2 mm · PA-MPJPE 31.3 mm**. Input fisheye · ground truth · prediction.
+
+<div align="center">
+<img src="human_pose/doc/demo.gif" width="85%">
+</div>
+
+<div align="center"><sub>
+Details &amp; method: <a href="human_pose/">human_pose/</a> &nbsp;·&nbsp; ▶️ <a href="human_pose/doc/demo.mp4">full video</a>
+</sub></div>
+
+---
+
 ## Delivered Data
 
 | File | Contents |
