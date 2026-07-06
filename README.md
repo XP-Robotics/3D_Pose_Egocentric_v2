@@ -1,81 +1,87 @@
+<div align="center">
+
 # 3D Pose — Egocentric Hand & Object Reconstruction
 
-A pipeline by **XP Robotics** that reconstructs **3D hand–object interaction from
-a single ordinary RGB video** — no depth sensor, no calibration, no markers. From
-one camera it recovers metric 3D depth, full 3D hand meshes for both hands,
-text-promptable object detection with per-object 6DoF pose tracking, and even
-**retargets the recovered motion onto a robot**.
+**XP Robotics**
 
-📄 See [`CAPABILITY.md`](CAPABILITY.md) for the one-page capability summary.
+Reconstructing **3D hand–object interaction from a single RGB video** — no depth
+sensor, no calibration, no markers. Metric depth, 3D hand meshes for both hands,
+text-promptable object detection with 6DoF tracking, and motion retargeted onto a robot.
+
+📄 [Capability summary](CAPABILITY.md) &nbsp;·&nbsp; 📦 [Delivered data](data/)
+
+</div>
 
 ---
 
-## Highlight — Robot Retargeting
-The recovered hand motion mapped onto a bimanual robot, driven end-to-end from
-the raw video.
+## ⭐ Robot Retargeting
 
-<video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/robot_retarget.mp4" controls muted loop width="480"></video>
+<div align="center">
 
-![Robot retargeting](outputs/gif/robot_retarget.gif)
+Recovered hand motion mapped onto a bimanual robot, driven end-to-end from raw video.
+
+<img src="outputs/gif/robot_retarget.gif" width="55%">
+
+▶️ [Full video](outputs/robot_retarget.mp4)
+
+</div>
 
 ---
 
 ## Results
 
-### 3D Hand Mesh Reconstruction
-Per-frame 3D hand meshes recovered and projected back onto the input video.
+<table>
+  <tr>
+    <td width="33%" align="center"><b>3D Hand Mesh</b><br><sub>MANO meshes on the input video</sub><br><br><img src="outputs/gif/mano_overlay.gif" width="100%"></td>
+    <td width="33%" align="center"><b>3D Scene Reconstruction</b><br><sub>depth cloud + hand meshes + objects</sub><br><br><img src="outputs/gif/reconstruction_3d.gif" width="100%"></td>
+    <td width="33%" align="center"><b>Hand &amp; Object Tracking</b><br><sub>keypoints + open-vocab masks</sub><br><br><img src="outputs/gif/tracking_2d.gif" width="100%"></td>
+  </tr>
+  <tr>
+    <td align="center"><b>Metric Depth</b><br><sub>per-frame, single RGB camera</sub><br><br><img src="outputs/gif/depth.gif" width="100%"></td>
+    <td align="center"><b>Object Segmentation</b><br><sub>text-prompted, tracked</sub><br><br><img src="outputs/gif/object_masks.gif" width="100%"></td>
+    <td align="center"><b>Object 3D Trajectories</b><br><sub>per-object position over time</sub><br><br><img src="outputs/object_trajectories.png" width="100%"></td>
+  </tr>
+</table>
 
-<video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/mano_overlay.mp4" controls muted loop width="640"></video>
-
-![Hand mesh reconstruction](outputs/gif/mano_overlay.gif)
-
-### 3D Scene Reconstruction
-Metric depth point cloud with the reconstructed 3D hand meshes and detected
-objects, from a free camera.
-
-<video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/reconstruction_3d.mp4" controls muted loop width="640"></video>
-
-![3D scene reconstruction](outputs/gif/reconstruction_3d.gif)
-
-### Hand & Object Tracking
-Per-frame hand keypoint tracking with open-vocabulary object segmentation.
-
-<video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/tracking_2d.mp4" controls muted loop width="640"></video>
-
-![Hand and object tracking](outputs/gif/tracking_2d.gif)
-
-### Metric Depth
-Per-frame metric depth from the single RGB camera.
-
-<video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/depth.mp4" controls muted loop width="640"></video>
-
-![Metric depth](outputs/gif/depth.gif)
-
-### Object Segmentation
-Text-prompted object masks tracked across the clip.
-
-<video src="https://github.com/XP-Robotics/3D_Pose_Egocentric_v2/raw/main/outputs/object_masks.mp4" controls muted loop width="640"></video>
-
-![Object segmentation](outputs/gif/object_masks.gif)
-
-### Object 3D Trajectories
-Recovered 3D position of each tracked object over time.
-
-![Object trajectories](outputs/object_trajectories.png)
+<div align="center"><sub>
+Full-resolution MP4s:
+<a href="outputs/mano_overlay.mp4">hand mesh</a> ·
+<a href="outputs/reconstruction_3d.mp4">3D reconstruction</a> ·
+<a href="outputs/tracking_2d.mp4">tracking</a> ·
+<a href="outputs/depth.mp4">depth</a> ·
+<a href="outputs/object_masks.mp4">segmentation</a>
+</sub></div>
 
 ---
 
-## Delivered data
+## 🧪 Egocentric Multi-Camera (Preview — in progress)
 
-Structured, ready-to-use outputs (metric metres, camera frame) — see
-[`data/DATA_FORMAT.md`](data/DATA_FORMAT.md):
+Early results on a **head/body-worn multi-fisheye capture** (`.mcap`). Object
+detection is already strong; **hand geometry is approximate pending final camera
+calibration** and will sharpen once applied. Shown as a work-in-progress preview.
+
+<table>
+  <tr>
+    <td width="33%" align="center"><b>Hand &amp; Object Tracking</b><br><br><img src="preview_egocentric/gif/front_tracking_2d.gif" width="100%"></td>
+    <td width="33%" align="center"><b>3D Hand Mesh</b><br><sub>approximate calibration</sub><br><br><img src="preview_egocentric/gif/front_mano_overlay.gif" width="100%"></td>
+    <td width="33%" align="center"><b>3D Reconstruction</b><br><sub>approximate calibration</sub><br><br><img src="preview_egocentric/gif/front_reconstruction_3d.gif" width="100%"></td>
+  </tr>
+</table>
+
+<div align="center"><sub>⚠️ Preview only — geometry approximate (calibration pending). Not final.</sub></div>
+
+---
+
+## Delivered Data
 
 | File | Contents |
 |---|---|
-| [`data/tracking.json`](data/tracking.json) | Per-frame **3D + 2D hand keypoints**, **6DoF object poses**, **3D bounding boxes**, labels + confidence, camera intrinsics |
+| [`data/tracking.json`](data/tracking.json) | Per-frame **3D + 2D hand keypoints**, **6DoF object poses**, **3D boxes**, labels + confidence, camera intrinsics |
 | [`data/hand_meshes/`](data/hand_meshes/) | Per-frame **3D hand meshes** (`.obj`, 778 verts/hand) |
-| [`data/robot_trajectory.npz`](data/robot_trajectory.npz) | **Robot joint trajectory** from the retargeting |
+| [`data/robot_trajectory.npz`](data/robot_trajectory.npz) | **Robot joint trajectory** from retargeting |
 | [`data/metrics.json`](data/metrics.json) | Quality metrics summary |
+
+See [`data/DATA_FORMAT.md`](data/DATA_FORMAT.md) for the schema (metric metres, camera frame).
 
 ---
 
@@ -85,17 +91,15 @@ Structured, ready-to-use outputs (metric metres, camera frame) — see
 - **3D hand mesh reconstruction** — both hands, every frame
 - **Open-vocabulary object detection & segmentation** — objects specified by text
 - **6DoF object pose tracking** with oriented 3D bounding boxes
-- **Robot retargeting** — hand motion mapped to a robot arm/humanoid
-- **Interactive 3D scene viewer** for inspecting the reconstruction
+- **Robot retargeting** — hand motion mapped to a robot arm / humanoid
+- **Interactive 3D scene viewer**
 
 ## Overview
 
-The system takes a short RGB clip of a person interacting with objects and
-produces a temporally consistent 4D reconstruction of the scene — per-frame
-metric depth, articulated 3D hand meshes, and tracked 3D objects — all in a
-single, gravity-aligned world frame, and connects perception to action by
-retargeting the motion onto a robot. Produced end-to-end from raw video, with
-the target objects specified only by text.
+The system takes a short RGB clip of a person interacting with objects and produces
+a temporally consistent 4D reconstruction — per-frame metric depth, articulated 3D
+hand meshes, and tracked 3D objects — in a single gravity-aligned world frame, and
+connects perception to action by retargeting the motion onto a robot. Produced
+end-to-end from raw video, with target objects specified only by text.
 
----
-© XP Robotics. Results generated by the XP Robotics 3D pose pipeline.
+<div align="center"><sub>© XP Robotics — results generated by the XP Robotics 3D pose pipeline.</sub></div>
