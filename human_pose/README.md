@@ -19,7 +19,7 @@ predicting a **19-joint** 3D skeleton from a head/body-worn camera.
 
 Input fisheye (left) · ground-truth skeleton (center) · **predicted** skeleton (right).
 
-<img src="doc/demo.gif" width="90%">
+<img src="doc/demo.webp" width="90%">
 
 ▶️ [Full-resolution video](doc/demo.mp4)
 
