@@ -20,7 +20,7 @@ text-promptable object detection with 6DoF tracking, and motion retargeted onto 
 
 Recovered hand motion mapped onto a bimanual robot, driven end-to-end from raw video.
 
-<img src="outputs/gif/robot_retarget.gif" width="55%">
+<img src="outputs/gif/robot_retarget.webp" width="55%">
 
 ▶️ [Full video](outputs/robot_retarget.mp4)
 
@@ -32,13 +32,13 @@ Recovered hand motion mapped onto a bimanual robot, driven end-to-end from raw v
 
 <table>
   <tr>
-    <td width="33%" align="center"><b>3D Hand Mesh</b><br><sub>MANO meshes on the input video</sub><br><br><img src="outputs/gif/mano_overlay.gif" width="100%"></td>
-    <td width="33%" align="center"><b>3D Scene Reconstruction</b><br><sub>depth cloud + hand meshes + objects</sub><br><br><img src="outputs/gif/reconstruction_3d.gif" width="100%"></td>
-    <td width="33%" align="center"><b>Hand &amp; Object Tracking</b><br><sub>keypoints + open-vocab masks</sub><br><br><img src="outputs/gif/tracking_2d.gif" width="100%"></td>
+    <td width="33%" align="center"><b>3D Hand Mesh</b><br><sub>MANO meshes on the input video</sub><br><br><img src="outputs/gif/mano_overlay.webp" width="100%"></td>
+    <td width="33%" align="center"><b>3D Scene Reconstruction</b><br><sub>depth cloud + hand meshes + objects</sub><br><br><img src="outputs/gif/reconstruction_3d.webp" width="100%"></td>
+    <td width="33%" align="center"><b>Hand &amp; Object Tracking</b><br><sub>keypoints + open-vocab masks</sub><br><br><img src="outputs/gif/tracking_2d.webp" width="100%"></td>
   </tr>
   <tr>
-    <td align="center"><b>Metric Depth</b><br><sub>per-frame, single RGB camera</sub><br><br><img src="outputs/gif/depth.gif" width="100%"></td>
-    <td align="center"><b>Object Segmentation</b><br><sub>text-prompted, tracked</sub><br><br><img src="outputs/gif/object_masks.gif" width="100%"></td>
+    <td align="center"><b>Metric Depth</b><br><sub>per-frame, single RGB camera</sub><br><br><img src="outputs/gif/depth.webp" width="100%"></td>
+    <td align="center"><b>Object Segmentation</b><br><sub>text-prompted, tracked</sub><br><br><img src="outputs/gif/object_masks.webp" width="100%"></td>
     <td align="center"><b>Object 3D Trajectories</b><br><sub>per-object position over time</sub><br><br><img src="outputs/object_trajectories.png" width="100%"></td>
   </tr>
 </table>
@@ -64,9 +64,9 @@ recovered in a gravity-aligned frame.
 
 <table>
   <tr>
-    <td width="33%" align="center"><b>Hand &amp; Object Tracking</b><br><sub>both hands · 100% of frames</sub><br><br><img src="preview_egocentric/gif/front_tracking_2d.gif" width="100%"></td>
-    <td width="33%" align="center"><b>3D Hand Mesh</b><br><sub>MANO meshes, both hands</sub><br><br><img src="preview_egocentric/gif/front_mano_overlay.gif" width="100%"></td>
-    <td width="33%" align="center"><b>3D Reconstruction</b><br><sub>metric depth + hand meshes</sub><br><br><img src="preview_egocentric/gif/front_reconstruction_3d.gif" width="100%"></td>
+    <td width="33%" align="center"><b>Hand &amp; Object Tracking</b><br><sub>both hands · 100% of frames</sub><br><br><img src="preview_egocentric/gif/front_tracking_2d.webp" width="100%"></td>
+    <td width="33%" align="center"><b>3D Hand Mesh</b><br><sub>MANO meshes, both hands</sub><br><br><img src="preview_egocentric/gif/front_mano_overlay.webp" width="100%"></td>
+    <td width="33%" align="center"><b>3D Reconstruction</b><br><sub>metric depth + hand meshes</sub><br><br><img src="preview_egocentric/gif/front_reconstruction_3d.webp" width="100%"></td>
   </tr>
 </table>
 
@@ -87,7 +87,7 @@ Full-body **19-joint 3D pose** from a stereo-fisheye egocentric camera —
 **MPJPE 37.2 mm · PA-MPJPE 31.3 mm**. Input fisheye · ground truth · prediction.
 
 <div align="center">
-<img src="human_pose/doc/demo.gif" width="85%">
+<img src="human_pose/doc/demo.webp" width="85%">
 </div>
 
 <div align="center"><sub>
@@ -104,11 +104,11 @@ world-space 3D trajectory.
 
 <table>
   <tr>
-    <td width="50%" align="center"><b>Input</b><br><sub>ARKit RGB capture</sub><br><br><img src="arkit_hand_tracking/doc/input.gif" width="100%"></td>
-    <td width="50%" align="center"><b>Depth Overlay</b><br><sub>LiDAR depth + 2D hand skeleton + wrist distance</sub><br><br><img src="arkit_hand_tracking/doc/depth_overlay.gif" width="100%"></td>
+    <td width="50%" align="center"><b>Input</b><br><sub>ARKit RGB capture</sub><br><br><img src="arkit_hand_tracking/doc/input.webp" width="100%"></td>
+    <td width="50%" align="center"><b>Depth Overlay</b><br><sub>LiDAR depth + 2D hand skeleton + wrist distance</sub><br><br><img src="arkit_hand_tracking/doc/depth_overlay.webp" width="100%"></td>
   </tr>
   <tr>
-    <td colspan="2" align="center"><b>3D Visualization</b><br><sub>hand pose + head/hand trajectory in world frame</sub><br><br><img src="arkit_hand_tracking/doc/viz_3d.gif" width="72%"></td>
+    <td colspan="2" align="center"><b>3D Visualization</b><br><sub>hand pose + head/hand trajectory in world frame</sub><br><br><img src="arkit_hand_tracking/doc/viz_3d.webp" width="72%"></td>
   </tr>
 </table>
 

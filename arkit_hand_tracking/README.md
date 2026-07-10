@@ -18,12 +18,12 @@ visualization.
 
 **Input**  &nbsp;·&nbsp;  **Depth Overlay**
 
-<img src="doc/input.gif" width="48%" />
-<img src="doc/depth_overlay.gif" width="48%" />
+<img src="doc/input.webp" width="48%" />
+<img src="doc/depth_overlay.webp" width="48%" />
 
 **3D Visualization**
 
-<img src="doc/viz_3d.gif" width="80%" />
+<img src="doc/viz_3d.webp" width="80%" />
 
 </div>
 
